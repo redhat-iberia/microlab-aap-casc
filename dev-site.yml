@@ -2,9 +2,9 @@ runtime:
   cache_dir: ./.cache/antora
 
 site:
-  title: Template Tutorial(Dev Mode)
-  url: http://localhost:3000/rhs-build-course/index.html
-  start_page: template-tutorial::index.adoc
+  title: Gestión del Ansible Automation Controller con Configuración como Código (Dev Mode)
+  url: http://localhost:3000/controller-casc/index.html
+  start_page: controller-casc::index.adoc
 
 content:
   sources:
@@ -13,7 +13,8 @@ content:
       start_path: documentation
 asciidoc:
   attributes:
-    title: Template Tutorial(Dev Mode)
+    page-pagination: true
+    title: Gestión del Ansible Automation Controller con Configuración como Código (Dev Mode)
   extensions:
     - ./lib/remote-include-processor.js
     - ./lib/tab-block.js

@@ -2,9 +2,9 @@ runtime:
   cache_dir: ./.cache/antora
 
 site:
-  title: Template Tutorial
-  url: https://redhat-scholars.github.io/course-template
-  start_page: template-tutorial::index.adoc
+  title: Gestión del Ansible Automation Controller con Configuración como Código
+  url: https://redhat-iberia.github.io/microlab-aap-casc/
+  start_page: controller-casc::index.adoc
 
 content:
   sources:

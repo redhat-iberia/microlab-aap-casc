@@ -1,5 +1,5 @@
-name: template-tutorial
-title: Template Tutorial
+name: controller-casc
+title: Gestión del Ansible Automation Controller con Configuración como Código
 version: master
 nav:
   - modules/ROOT/nav.adoc

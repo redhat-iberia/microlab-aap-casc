@@ -1,43 +1,17 @@
-= Deploy Service
-include::_attributes.adoc[]
+*Eliminación del Job Template #old# y creación del #new# a través de CasC*
 
-[#service]
-== The Service
+Durante este ejercicio el objetivo es eliminar Job Template #old# y creación del #new# a partir de un cambio en el link:https://gitlab.sc24.workshops:8888/root/sc24_casc[repositorio de git].
 
-The code:
+1.- En la link:https://aap24-controller01.sc24.workshops/[interfaz web del Controller], verás un Job Template
+nombrado #old#.
 
-[.lines_7]
-[.console-input]
-[source, java,subs="+macros,+attributes"]
-----
-public class Main {
+2.- Desde link:https://gitlab.sc24.workshops:8888/root/sc24_casc[repositorio de git], iremos a #path de definición JT# y descomentaremos el JT nuevo y comentaremos el nuevo. La definición del JT debería quedar así:
 
-    public static void main(String[] args) {
+```yaml
+```
 
-    } 
+3.- Realiamos el commit directamente desde la interfaz.
 
-}
+4.- En la link:https://aap24-controller01.sc24.workshops/jobs[interfaz web del Controller, sección de jobs], verás como se ejecutan #Jobs#. En este caso, #describir#
 
-./mvnw compile
-----
-
-[#package]
-== Packaging the Service
-
-You can package the next bash script:
-
-[source,bash,subs="+macros,+attributes"]
-----
-include::example$run.sh[]
-----
-
-[#deploy]
-== Deploy the Service
-
-And then you can deploy the service and execute commands inside:
-
-:podname: apps
-
-include::partial$exec_pod.adoc[]
-
-:!podname:
+5.- En la link:https://aap24-controller01.sc24.workshops/[interfaz web del Controller, sección Job Templates], verás como el JT #old# fue eliminado y el JT #new# fue creado.
