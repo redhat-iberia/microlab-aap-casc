@@ -51,10 +51,10 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="01-setup.html">SetUp de Configuración como Código (CasC)</a>
+    <a class="nav-link" href="01-setup.html">1. SetUp de Configuración como Código (CasC)</a>
   </li>
   <li class="nav-item is-current-page" data-depth="1">
-    <a class="nav-link" href="02-deploy.html">Creación y eliminación de Job Templates con CasC y GitOps</a>
+    <a class="nav-link" href="02-deploy.html">2. Creación y eliminación de Job Templates con CasC y GitOps</a>
   </li>
 </ul>
   </li>
@@ -71,7 +71,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Gestión del Ansible Automation Controller con Configuración como Código</a></li>
-    <li><a href="02-deploy.html">Creación y eliminación de Job Templates con CasC y GitOps</a></li>
+    <li><a href="02-deploy.html">2. Creación y eliminación de Job Templates con CasC y GitOps</a></li>
   </ul>
 </nav>
   <div class="edit-this-page"><a href="https://github.com/redhat-iberia/microlab-aap-casc/edit/master/documentation/modules/ROOT/pages/02-deploy.adoc">Edit this Page</a></div>
@@ -82,31 +82,70 @@
 <p><strong>Eliminación del Job Template <mark>old</mark> y creación del <mark>new</mark> a través de CasC</strong></p>
 </div>
 <div class="paragraph">
-<p>Durante este ejercicio el objetivo es eliminar Job Template <mark>old</mark> y creación del <mark>new</mark> a partir de un cambio en el <a href="https://gitlab.sc24.workshops:8888/root/sc24_casc">repositorio de git</a>.</p>
+<p>Durante este ejercicio el objetivo es eliminar el Job Template "superadmin Old_JT_summit24" y creación del "superadmin New_JT_CasC_summit24" a partir de un cambio en el <a href="https://gitlab.sc24.workshops:8888/root/sc24_casc">repositorio de git</a>.</p>
 </div>
 <div class="paragraph">
-<p>1.- En la <a href="https://aap24-controller01.sc24.workshops/">interfaz web del Controller</a>, verás un Job Template
-nombrado <mark>old</mark>.</p>
+<p>1.- En la <a href="https://aap24-controller01.sc24.workshops//#/templates">interfaz web del Controller</a>, verás un Job Template
+nombrado "superadmin Old_JT_summit24".</p>
 </div>
 <div class="paragraph">
-<p>2.- Desde <a href="https://gitlab.sc24.workshops:8888/root/sc24_casc">repositorio de git</a>, iremos a <mark>path de definición JT</mark> y descomentaremos el JT nuevo y comentaremos el nuevo. La definición del JT debería quedar así:</p>
+<p>2.- Desde <a href="https://gitlab.sc24.workshops:8888/root/sc24_casc">repositorio de git</a>, iremos a sc24_casc &#8594; controller_job_templates.d &#8594; sc24_casc.yml y descomentaremos el JT nuevo y comentaremos el viejo. Esto lo debemos hacer desde la propia interfaz web de GitLab en el botón Edit &#8594; Edit single file. La definición del JT debería quedar así:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml"></code></pre>
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">---
+controller_templates:
+  #- name: "{{ orgs }} Old_JT_summit24"
+  #  description: "Playbook to test CD of CasC"
+  #  organization: "{{ orgs }}"
+  #  project: "{{ orgs }} CasC_Data"
+  #  inventory: "{{ orgs }} Localhost"
+  #  playbook: "debug_old.yml"
+  #  job_type: run
+  #  credentials:
+  #    - "{{ orgs }} Vault Credential"
+  - name: "{{ orgs }} New_JT_CasC_summit24"
+    description: "Playbook to test CD of CasC"
+    organization: "{{ orgs }}"
+    project: "{{ orgs }} CasC_Data"
+    inventory: "{{ orgs }} Localhost"
+    playbook: "debug_new.yml"
+    job_type: run
+    credentials:
+      - "{{ orgs }} Vault Credential"
+...</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>3.- Realiamos el commit directamente desde la interfaz.</p>
+<p>3.- Realiamos el commit directamente desde la interfaz a la rama main.</p>
 </div>
 <div class="paragraph">
-<p>4.- En la <a href="https://aap24-controller01.sc24.workshops/jobs">interfaz web del Controller, sección de jobs</a>, verás como se ejecutan <mark>Jobs</mark>. En este caso, <mark>describir</mark></p>
+<p>4.- En la <a href="https://aap24-controller01.sc24.workshops/#/jobs">interfaz web del Controller, sección de jobs</a>, verás como se ejecutan los siguientes jobs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>superadmin WF_CasC_Ctrl:</p>
+</li>
+<li>
+<p>superadmin CasC_Data:</p>
+</li>
+<li>
+<p>superadmin JT_CasC_Ctrl_Config</p>
+</li>
+<li>
+<p>superadmin JT_CasC_Ctrl_Drop_Diff</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>5.- En la <a href="https://aap24-controller01.sc24.workshops/">interfaz web del Controller, sección Job Templates</a>, verás como el JT <mark>old</mark> fue eliminado y el JT <mark>new</mark> fue creado.</p>
+<p>5.- En la <a href="https://aap24-controller01.sc24.workshops/#/templates">interfaz web del Controller, sección Job Templates</a>, verás como el JT "superadmin Old_JT_summit24" fue eliminado y el JT "superadmin New_JT_CasC_summit24" fue creado.</p>
+</div>
+<div class="paragraph">
+<p>Durnate este microlab nos hemos centrado en la gestión de Job Templates ya que son los objetos con más cadencia de cambio y los más simples y fáciles de entender. Pero la Configuración como Código y el CD siguiendo metodología GitOps, es aplicable al resto de objetos del Ansible Automation Controller.</p>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="01-setup.html">SetUp de Configuración como Código (CasC)</a></span>
+  <span class="prev"><a href="01-setup.html">1. SetUp de Configuración como Código (CasC)</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
