@@ -1,4 +1,6 @@
-*Eliminación del Job Template #old# y creación del #new# a través de CasC*
+= Ejecución microlab
+
+== Eliminación del Job Template "old" y creación del "new" a través de CasC
 
 Durante este ejercicio el objetivo es eliminar el Job Template "superadmin Old_JT_summit24" y creación del "superadmin New_JT_CasC_summit24" a partir de un cambio en el link:https://gitlab.sc24.workshops:8888/root/sc24_casc[repositorio de git].
 

@@ -5,7 +5,3 @@
 En este microlab, demostraremos cómo es posible gestionar objetos del Ansible Automation Controller utilizando Configuración como Código siguiendo una metodología GitOps.
 
 En este ejercicio, eliminaremos y crearemos un Job Template en el Controller simplemente modificando su definición almacenada en un repositorio de control de versiones, como GitLab. Esto permitirá automatizar la gestión y despliegue continuo de configuraciones mediante cambios controlados en el repositorio.
-
-[.tile]
-* xref:01-setup.adoc[SetUp de Configuración como Código (CasC)]
-* xref:02-deploy.adoc[Creación y eliminación de Job Templates con CasC y GitOps]
