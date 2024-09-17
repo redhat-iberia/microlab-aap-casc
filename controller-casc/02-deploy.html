@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: Gestión del Ansible Automation Controller con Configuración como Código</title>
+    <title>Ejecución microlab :: Gestión del Ansible Automation Controller con Configuración como Código</title>
     <link rel="canonical" href="https://redhat-iberia.github.io/microlab-aap-casc/controller-casc/02-deploy.html">
     <link rel="prev" href="01-setup.html">
     <meta name="generator" content="Antora 3.0.0">
@@ -78,9 +78,10 @@
   </div>
   <div class="content">
 <article class="doc">
-<div class="paragraph">
-<p><strong>Eliminación del Job Template <mark>old</mark> y creación del <mark>new</mark> a través de CasC</strong></p>
-</div>
+<h1 class="page">Ejecución microlab</h1>
+<div class="sect1">
+<h2 id="_eliminación_del_job_template_old_y_creación_del_new_a_través_de_casc"><a class="anchor" href="#_eliminación_del_job_template_old_y_creación_del_new_a_través_de_casc"></a>Eliminación del Job Template "old" y creación del "new" a través de CasC</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Durante este ejercicio el objetivo es eliminar el Job Template "superadmin Old_JT_summit24" y creación del "superadmin New_JT_CasC_summit24" a partir de un cambio en el <a href="https://gitlab.sc24.workshops:8888/root/sc24_casc">repositorio de git</a>.</p>
 </div>
@@ -143,6 +144,8 @@ controller_templates:
 </div>
 <div class="paragraph">
 <p>Durnate este microlab nos hemos centrado en la gestión de Job Templates ya que son los objetos con más cadencia de cambio y los más simples y fáciles de entender. Pero la Configuración como Código y el CD siguiendo metodología GitOps, es aplicable al resto de objetos del Ansible Automation Controller.</p>
+</div>
+</div>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="01-setup.html">1. SetUp de Configuración como Código (CasC)</a></span>
