@@ -7,7 +7,13 @@ Durante este ejercicio el objetivo es eliminar el Job Template "superadmin Old_J
 1.- En la link:https://aap24-controller01.sc24.workshops//#/templates[interfaz web del Controller], verás un Job Template
 nombrado "superadmin Old_JT_summit24".
 
-2.- Desde link:https://gitlab.sc24.workshops:8888/root/sc24_casc[repositorio de git], iremos a sc24_casc -> controller_job_templates.d -> sc24_casc.yml y descomentaremos el JT nuevo y comentaremos el viejo. Esto lo debemos hacer desde la propia interfaz web de GitLab en el botón Edit -> Edit single file. La definición del JT debería quedar así:
+image::old_jt.png[width=600, height=400]
+
+2.- Desde link:https://gitlab.sc24.workshops:8888/root/sc24_casc[repositorio de git], iremos a sc24_casc -> controller_job_templates.d -> sc24_casc.yml y descomentaremos el JT nuevo y comentaremos el viejo. Esto lo debemos hacer desde la propia interfaz web de GitLab en el botón Edit -> Edit single file.
+
+image::edit_single_file.png[width=600, height=400]
+
+La definición del JT una vez descomentado el nuevo y comentado el viejo, debería quedar así:
 
 ```yaml
 ---
@@ -35,17 +41,23 @@ controller_templates:
 
 3.- Realiamos el commit directamente desde la interfaz a la rama main.
 
+image::commit.png[width=900, height=500]
+
 4.- En la link:https://aap24-controller01.sc24.workshops/#/jobs[interfaz web del Controller, sección de jobs], verás como se ejecutan los siguientes jobs:
 
-    * superadmin WF_CasC_Ctrl:
+    * *superadmin WF_CasC_Ctrl*: Es el workflow encargado de orquestar la sincronización del proyecto, la creación o modificación de los objetos definidos como código y de eliminar los objetos presentes en el Controller pero que no están en la definición cómo código.
 
-    * superadmin CasC_Data:
+    * *superadmin CasC_Data*: Sincronización del proyecto del CasC
 
-    * superadmin JT_CasC_Ctrl_Config
+    * *superadmin JT_CasC_Ctrl_Config*: Creación o modificación de los objetos definidos como código.
 
-    * superadmin JT_CasC_Ctrl_Drop_Diff
+    * *superadmin JT_CasC_Ctrl_Drop_Diff*: Eliminación de los objetos presentes en el Controller pero que no están en la definición cómo código.
 
 5.- En la link:https://aap24-controller01.sc24.workshops/#/templates[interfaz web del Controller, sección Job Templates], verás como el JT "superadmin Old_JT_summit24" fue eliminado y el JT "superadmin New_JT_CasC_summit24" fue creado.
 
+image::new_jt.png[width=600, height=400]
+
+
+== Resumen
 
 Durnate este microlab nos hemos centrado en la gestión de Job Templates ya que son los objetos con más cadencia de cambio y los más simples y fáciles de entender. Pero la Configuración como Código y el CD siguiendo metodología GitOps, es aplicable al resto de objetos del Ansible Automation Controller.

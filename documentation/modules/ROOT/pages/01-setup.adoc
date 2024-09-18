@@ -17,7 +17,7 @@ Conectarse a través de navegador web a los siguientes sistemas:
 
 |Ansible Automation Controller
 |Contraseña
-|
+|R3dh4t1!
 
 |GitLab
 |URL
@@ -29,5 +29,5 @@ Conectarse a través de navegador web a los siguientes sistemas:
 
 |GitLab
 |Contraseña
-|
+|R3dh4t1!
 |===
