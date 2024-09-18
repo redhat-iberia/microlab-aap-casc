@@ -2,10 +2,10 @@
 
 == Eliminación del Job Template "old" y creación del "new" a través de CasC
 
-Durante este ejercicio el objetivo es eliminar el Job Template "superadmin Old_JT_summit24" y creación del "superadmin New_JT_CasC_summit24" a partir de un cambio en el link:https://gitlab.sc24.workshops:8888/root/sc24_casc[repositorio de git].
+Durante este ejercicio el objetivo es la eliminación el Job Template *superadmin Old_JT_summit24* y la creación del *superadmin New_JT_CasC_summit24* a partir de un cambio en el link:https://gitlab.sc24.workshops:8888/root/sc24_casc[repositorio de git].
 
 1.- En la link:https://aap24-controller01.sc24.workshops//#/templates[interfaz web del Controller], verás un Job Template
-nombrado "superadmin Old_JT_summit24".
+nombrado *superadmin Old_JT_summit24*.
 
 image::old_jt.png[width=600, height=400]
 
@@ -53,7 +53,7 @@ image::commit.png[width=900, height=500]
 
     * *superadmin JT_CasC_Ctrl_Drop_Diff*: Eliminación de los objetos presentes en el Controller pero que no están en la definición cómo código.
 
-5.- En la link:https://aap24-controller01.sc24.workshops/#/templates[interfaz web del Controller, sección Job Templates], verás como el JT "superadmin Old_JT_summit24" fue eliminado y el JT "superadmin New_JT_CasC_summit24" fue creado.
+5.- En la link:https://aap24-controller01.sc24.workshops/#/templates[interfaz web del Controller, sección Job Templates], verás como el JT *superadmin Old_JT_summit24* fue eliminado y el JT *superadmin New_JT_CasC_summit24* fue creado.
 
 image::new_jt.png[width=600, height=400]
 
