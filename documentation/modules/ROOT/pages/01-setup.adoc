@@ -13,7 +13,7 @@ Conectarse a través de navegador web a los siguientes sistemas:
 
 |Ansible Automation Controller
 |Usuario
-|admin
+|user1
 
 |Ansible Automation Controller
 |Contraseña
