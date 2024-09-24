@@ -2,7 +2,7 @@
 
 == Eliminación del Job Template "old" y creación del "new" a través de CasC
 
-Durante este ejercicio el objetivo es la eliminación el Job Template *superadmin Old_JT_summit24* y la creación del *superadmin New_JT_CasC_summit24* a partir de un cambio en el link:https://gitlab.sc24.workshops:8888/root/sc24_casc[repositorio de git].
+Durante este ejercicio el objetivo es la eliminación del Job Template *superadmin Old_JT_summit24* y la creación del *superadmin New_JT_CasC_summit24* a partir de un cambio en el link:https://gitlab.sc24.workshops:8888/root/sc24_casc[repositorio de git].
 
 1.- En la link:https://aap24-controller01.sc24.workshops//#/templates[interfaz web del Controller], verás un Job Template
 nombrado *superadmin Old_JT_summit24*.
@@ -60,4 +60,4 @@ image::new_jt.png[width=600, height=400]
 
 == Resumen
 
-Durnate este microlab nos hemos centrado en la gestión de Job Templates ya que son los objetos con más cadencia de cambio y los más simples y fáciles de entender. Pero la Configuración como Código y el CD siguiendo metodología GitOps, es aplicable al resto de objetos del Ansible Automation Controller.
+Durante este microlab nos hemos centrado en la gestión de Job Templates ya que son los objetos con más cadencia de cambio y los más simples y fáciles de entender. Pero la Configuración como Código y el CD siguiendo metodología GitOps, es aplicable al resto de objetos del Ansible Automation Controller.
