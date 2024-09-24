@@ -39,7 +39,7 @@ controller_templates:
 ...
 ```
 
-3.- Realiamos el commit directamente desde la interfaz a la rama main.
+3.- Realizamos el commit directamente desde la interfaz a la rama main.
 
 image::commit.png[width=900, height=500]
 
@@ -60,4 +60,4 @@ image::new_jt.png[width=600, height=400]
 
 == Resumen
 
-Durnate este microlab nos hemos centrado en la gestión de Job Templates ya que son los objetos con más cadencia de cambio y los más simples y fáciles de entender. Pero la Configuración como Código y el CD siguiendo metodología GitOps, es aplicable al resto de objetos del Ansible Automation Controller.
+Durante este microlab nos hemos centrado en la gestión de Job Templates ya que son los objetos con más cadencia de cambio y los más simples y fáciles de entender. Pero la Configuración como Código y el CD siguiendo metodología GitOps, es aplicable al resto de objetos del Ansible Automation Controller.
