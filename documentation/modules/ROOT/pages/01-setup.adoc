@@ -1,6 +1,8 @@
 = Microlab SetUp
 
-Conectarse a través de navegador web a los siguientes sistemas:
+== Sistemas
+
+Para la realización de este microlab, hay que conectarse a través de un navegador web a los siguientes sistemas:
 
 .Sistemas de Administración
 [cols="1,2,2",options="header"]
@@ -31,3 +33,24 @@ Conectarse a través de navegador web a los siguientes sistemas:
 |Contraseña
 |R3dh4t1!
 |===
+
+== CasC Setup
+Para poder entender cómo será el flujo y funcionamiento de nuestro Despliegue Continuo(CD) a través de Configuración como Código(CasC), debemos enteder previamente cómo se ha realizado el SetUp del mismo.
+
+En la link:https://aap24-controller01.sc24.workshops/#/templates[interfaz web del Controller, sección Job Templates] veremos 3 Job Templates y un Workflow Job Template. Centrandonos en el SetUp del CasC, entremos en el detalle de superadmin WF_CasC_Ctrl y en la sección de Visualizer:
+
+image::wf_visualizer.png[width=600, height=400]
+
+En la imagen anterior podemos ver como este WorkFlow se encarcará de hacer un sync de nuestro projecto, posteriormente lanzará el JobTemplate de CD para crear y modificar los objetos definidos en nuestro Git y por último lanzará el JobTemplate de Dropdiff que eliminará lo que esté creado en el controller pero no definido en el repositorio Git.
+
+Ahora podemos cerrar el Visualizer y centranos en la seción Details de este WorkFlow. Observaremos que el Webhook Service está habilitado para GitLab y que tenemos una Webhook URL y Webhook Key específica. Con esta información, podemos ahora revisar la configuración de nuestro Webhook en Gitlab.
+
+En el link:https://gitlab.sc24.workshops:8888/root/sc24_casc[repositorio de git], si nos vamos a settings -> Webhooks vermos que hay un Webhook creado para eventos de push sobre todas las ramas. En este caso veremos que la URL es la que podiamos ver anteriormente desde el controller y el Secret token (aunque esté oculto) será el Token que igualmente veiamos en el controller:
+
+
+image::gitwebhook.png[width=600, height=400]
+
+
+Con esta configuración, lo que veremos durante el microlab es que ante un push en el repo Git, se ejecutará el WorkFlow del Controller al que, como acabamos de ver, nos hemos conectado.
+
+Dicho esto esto, manos a la obra ;-)
