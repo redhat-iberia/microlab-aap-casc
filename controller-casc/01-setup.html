@@ -80,8 +80,11 @@
   <div class="content">
 <article class="doc">
 <h1 class="page">Microlab SetUp</h1>
+<div class="sect1">
+<h2 id="_sistemas"><a class="anchor" href="#_sistemas"></a>Sistemas</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Conectarse a través de navegador web a los siguientes sistemas:</p>
+<p>Para la realización de este microlab, hay que conectarse a través de un navegador web a los siguientes sistemas:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Sistemas de Administración</caption>
@@ -130,6 +133,44 @@
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_casc_setup"><a class="anchor" href="#_casc_setup"></a>CasC Setup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Para poder entender cómo será el flujo y funcionamiento de nuestro Despliegue Continuo(CD) a través de Configuración como Código(CasC), debemos enteder previamente cómo se ha realizado el SetUp del mismo.</p>
+</div>
+<div class="paragraph">
+<p>En la <a href="https://aap24-controller01.sc24.workshops/#/templates">interfaz web del Controller, sección Job Templates</a> veremos 3 Job Templates y un Workflow Job Template. Centrandonos en el SetUp del CasC, entremos en el detalle de superadmin WF_CasC_Ctrl y en la sección de Visualizer:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/wf_visualizer.png" alt="wf visualizer" width="600" height="400">
+</div>
+</div>
+<div class="paragraph">
+<p>En la imagen anterior podemos ver como este WorkFlow se encarcará de hacer un sync de nuestro projecto, posteriormente lanzará el JobTemplate de CD para crear y modificar los objetos definidos en nuestro Git y por último lanzará el JobTemplate de Dropdiff que eliminará lo que esté creado en el controller pero no definido en el repositorio Git.</p>
+</div>
+<div class="paragraph">
+<p>Ahora podemos cerrar el Visualizer y centranos en la seción Details de este WorkFlow. Observaremos que el Webhook Service está habilitado para GitLab y que tenemos una Webhook URL y Webhook Key específica. Con esta información, podemos ahora revisar la configuración de nuestro Webhook en Gitlab.</p>
+</div>
+<div class="paragraph">
+<p>En el <a href="https://gitlab.sc24.workshops:8888/root/sc24_casc">repositorio de git</a>, si nos vamos a settings &#8594; Webhooks vermos que hay un Webhook creado para eventos de push sobre todas las ramas. En este caso veremos que la URL es la que podiamos ver anteriormente desde el controller y el Secret token (aunque esté oculto) será el Token que igualmente veiamos en el controller:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/gitwebhook.png" alt="gitwebhook" width="600" height="400">
+</div>
+</div>
+<div class="paragraph">
+<p>Con esta configuración, lo que veremos durante el microlab es que ante un push en el repo Git, se ejecutará el WorkFlow del Controller al que, como acabamos de ver, nos hemos conectado.</p>
+</div>
+<div class="paragraph">
+<p>Dicho esto esto, manos a la obra ;-)</p>
+</div>
+</div>
+</div>
 <nav class="pagination">
   <span class="prev"><a href="index.html">Gestión del Ansible Automation Controller con Configuración como Código</a></span>
   <span class="next"><a href="02-deploy.html">2. Creación y eliminación de Job Templates con CasC y GitOps</a></span>
