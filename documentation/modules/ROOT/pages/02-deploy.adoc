@@ -11,6 +11,11 @@ image::old_jt.png[width=600, height=400]
 
 2.- Desde link:https://gitlab.sc24.workshops:8888/root/sc24_casc[repositorio de git], iremos a sc24_casc -> controller_job_templates.d -> sc24_casc.yml y descomentaremos el JT nuevo y comentaremos el viejo. Esto lo debemos hacer desde la propia interfaz web de GitLab en el botón Edit -> Edit single file.
 
+[TIP]
+====
+Puedes editar el bloque completo seleccionandolo y pulsando "Ctrl+/"
+====
+
 image::edit_single_file.png[width=600, height=400]
 
 La definición del JT una vez descomentado el nuevo y comentado el viejo, debería quedar así:
