@@ -19,7 +19,7 @@ Para la realización de este microlab, hay que conectarse a través de un navega
 
 |Ansible Automation Controller
 |Contraseña
-|R3dh4t1!
+|Summit24!
 
 |GitLab
 |URL
@@ -27,11 +27,11 @@ Para la realización de este microlab, hay que conectarse a través de un navega
 
 |GitLab
 |Usuario
-|sc24_casc
+|user1
 
 |GitLab
 |Contraseña
-|R3dh4t1!
+|Summit24!
 |===
 
 == CasC Setup
